@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bali Biscuits — Coming Soon</title>
+  <meta name="description" content="Handmade shortbread biscuits with custom engraved messages. Made in Bali, delivered with a smile. Opening soon."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet"/>
+  <style>
+@import url('https://fonts.cdnfonts.com/css/bakery-good');
+:root{--red:#EF3705;--pink:#FF7DA1;--yellow:#FFCE5E;--grey:#F7EBE2;--dark:#1C1C1C;--white:#FFFFFF}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:var(--pink);color:var(--white);overflow-x:hidden;cursor:none}
+#cursor{width:18px;height:18px;background:var(--yellow);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;mix-blend-mode:multiply}
+#cursor.big{width:50px;height:50px;background:var(--white)}
+.ticker{background:var(--dark);padding:9px 0;overflow:hidden;position:fixed;top:0;left:0;right:0;z-index:100}
+.ticker__track{display:flex;width:max-content;animation:tick 20s linear infinite}
+.ticker__item{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:0 2rem;white-space:nowrap;color:var(--grey)}
+.ticker__item em{color:var(--yellow);font-style:normal;margin-right:.6rem}
+@keyframes tick{to{transform:translateX(-50%)}}
+.hero{min-height:100vh;background:var(--pink);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:7rem 6vw 4rem;gap:3rem;position:relative;overflow:hidden}
+@media(max-width:768px){.hero{grid-template-columns:1fr;padding:7rem 6vw 4rem;text-align:center}}
+.hero__blob{position:absolute;inset:0;pointer-events:none;z-index:0}
+.hero__blob svg{width:100%;height:100%}
+.hero__left{position:relative;z-index:2}
+.hero__right{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+.pill{display:inline-block;background:var(--yellow);color:var(--dark);font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:6px 18px;border-radius:100px;margin-bottom:1.4rem;animation:fadeUp .7s .1s both}
+.hero__title{font-family:'Bakery Good','Poppins',sans-serif;font-size:clamp(3.5rem,8vw,7rem);line-height:.92;text-transform:uppercase;letter-spacing:-.01em;color:var(--white);animation:fadeUp .7s .25s both}
+.hero__title .line--outline{-webkit-text-stroke:3px var(--white);color:transparent}
+.hero__title .line--red{color:var(--red)}
+.hero__sub{font-size:clamp(.95rem,1.8vw,1.15rem);line-height:1.75;color:rgba(255,255,255,.85);max-width:480px;margin:1.6rem 0 2.4rem;animation:fadeUp .7s .4s both;font-weight:400}
+@media(max-width:768px){.hero__sub{margin:1.2rem auto 2rem}}
+.hero__ctas{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp .7s .55s both}
+@media(max-width:768px){.hero__ctas{justify-content:center}}
+.logo-wrap{width:min(360px,88vw);animation:floatLogo 5s ease-in-out infinite,fadeUp .7s .3s both;filter:drop-shadow(0 24px 60px rgba(0,0,0,.2))}
+.logo-wrap svg{width:100%;height:auto}
+.btn{font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:14px 28px;border-radius:100px;border:2px solid transparent;cursor:none;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:transform .2s,box-shadow .2s}
+.btn--red{background:var(--red);color:var(--white);border-color:var(--red)}
+.btn--white{background:var(--white);color:var(--dark);border-color:var(--white)}
+.btn--outline-white{background:transparent;color:var(--white);border-color:var(--white)}
+.btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 12px 32px rgba(0,0,0,.18)}
+.band{background:var(--red);padding:18px 0;overflow:hidden;transform:rotate(-1.2deg) scaleX(1.04);margin:3rem 0 0}
+.band__track{display:flex;width:max-content;animation:tick 16s linear infinite}
+.band__item{font-family:'Bakery Good','Poppins',sans-serif;font-size:1.5rem;text-transform:uppercase;letter-spacing:.06em;padding:0 2.5rem;white-space:nowrap;color:var(--white)}
+.band__item .star{color:var(--yellow);margin-right:2rem}
+.section{padding:6rem 6vw}
+.section--red{background:var(--red)}
+.section--dark{background:var(--dark)}
+.section--grey{background:var(--grey);color:var(--dark)}
+.section--pink{background:var(--pink)}
+.section__label{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;opacity:.6;margin-bottom:.8rem}
+.section__title{font-family:'Bakery Good','Poppins',sans-serif;font-size:clamp(2.4rem,5vw,4.5rem);text-transform:uppercase;line-height:.96;margin-bottom:1.5rem}
+.about__grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1100px;margin:0 auto}
+@media(max-width:768px){.about__grid{grid-template-columns:1fr;gap:2.5rem}}
+.about__body{font-size:1.05rem;line-height:1.8;color:rgba(28,28,28,.75)}
+.about__body strong{color:var(--dark)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:1100px;margin:3rem auto 0}
+@media(max-width:900px){.cards{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.cards{grid-template-columns:1fr}}
+.card{background:var(--white);border-radius:20px;padding:2rem 1.6rem;color:var(--dark);position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.card--yellow{background:var(--yellow)}
+.card--red{background:var(--red);color:var(--white)}
+.card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,.12)}
+.card__emoji{font-size:2.2rem;margin-bottom:.8rem}
+.card__title{font-size:.95rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:.4rem}
+.card__body{font-size:.85rem;line-height:1.65;opacity:.75}
+.card--red .card__body{opacity:.85}
+.messages{text-align:center}
+.messages__grid{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;max-width:900px;margin:2.5rem auto 0}
+.msg{background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.3);border-radius:14px;padding:.9rem 1.4rem;font-size:.9rem;font-weight:600;color:var(--white);cursor:none;transition:transform .2s,background .2s,border-color .2s;backdrop-filter:blur(4px)}
+.msg:hover{background:var(--yellow);border-color:var(--yellow);color:var(--dark);transform:rotate(-2deg) scale(1.07)}
+.msg:nth-child(even):hover{transform:rotate(2deg) scale(1.07)}
+.notify{text-align:center}
+.notify__title{font-family:'Bakery Good','Poppins',sans-serif;font-size:clamp(3rem,7vw,6rem);text-transform:uppercase;line-height:.92;margin-bottom:1.5rem}
+.notify__title .outline{-webkit-text-stroke:3px var(--red);color:transparent}
+.notify__sub{font-size:1rem;line-height:1.8;color:rgba(28,28,28,.65);max-width:520px;margin:0 auto 2.5rem}
+.wa-btn{display:inline-flex;align-items:center;gap:.75rem;background:#25D366;color:var(--white);font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.04em;text-transform:uppercase;padding:16px 36px;border-radius:100px;text-decoration:none;cursor:none;box-shadow:0 10px 35px rgba(37,211,102,.4);transition:transform .2s,box-shadow .2s}
+.wa-btn:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 18px 50px rgba(37,211,102,.55)}
+.wa-btn svg{width:22px;height:22px;fill:white;flex-shrink:0}
+.notify__note{font-size:.78rem;color:rgba(28,28,28,.45);margin-top:1rem}
+footer{background:var(--dark);padding:4rem 6vw 2.5rem;color:var(--grey)}
+.footer__top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:2.5rem;margin-bottom:2rem}
+.footer__logo{width:180px}
+.footer__logo svg{width:100%;height:auto}
+.footer__links{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer__links a{color:rgba(247,235,226,.5);text-decoration:none;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;transition:color .2s}
+.footer__links a:hover{color:var(--yellow)}
+.footer__copy{font-size:.72rem;color:rgba(247,235,226,.3);text-align:center;letter-spacing:.05em}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes floatLogo{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-20px) rotate(1deg)}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+  </style>
+</head>
+<body>
+<div id="cursor"></div>
+
+<!-- TICKER — modif 4 : emojis mis à jour -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span class="ticker__item"><em>🍪</em>Bali Biscuits</span>
+    <span class="ticker__item"><em>✍️</em>Custom Messages</span>
+    <span class="ticker__item"><em>🌴</em>Handmade in Bali</span>
+    <span class="ticker__item"><em>💁‍♀️</em>Opening Soon</span>
+    <span class="ticker__item"><em>💬</em>Say it sweetly</span>
+    <span class="ticker__item"><em>💛</em>Hotels &amp; Events</span>
+    <span class="ticker__item"><em>🍪</em>Bali Biscuits</span>
+    <span class="ticker__item"><em>✍️</em>Custom Messages</span>
+    <span class="ticker__item"><em>🌴</em>Handmade in Bali</span>
+    <span class="ticker__item"><em>💁‍♀️</em>Opening Soon</span>
+    <span class="ticker__item"><em>💬</em>Say it sweetly</span>
+    <span class="ticker__item"><em>💛</em>Hotels &amp; Events</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <!-- modif 1 : background vagues rouge/rose inspiré Bg_red.png -->
+  <div class="hero__blob" aria-hidden="true">
+    <svg viewBox="0 0 900 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <rect width="900" height="900" fill="#FF7DA1"/>
+      <path fill="#EF3705">
+        <animate attributeName="d" dur="9s" repeatCount="indefinite"
+          values="M0,0 C150,80 350,-60 500,40 C650,140 800,20 900,80 L900,310 C750,250 550,370 400,270 C250,170 100,290 0,230 Z;
+                  M0,0 C180,100 320,-40 520,60 C700,150 820,30 900,100 L900,330 C730,260 560,390 380,280 C210,180 80,310 0,250 Z;
+                  M0,0 C150,80 350,-60 500,40 C650,140 800,20 900,80 L900,310 C750,250 550,370 400,270 C250,170 100,290 0,230 Z"/>
+      </path>
+      <path fill="#EF3705">
+        <animate attributeName="d" dur="11s" repeatCount="indefinite"
+          values="M0,380 C120,320 300,440 480,360 C660,280 780,400 900,340 L900,580 C760,640 580,520 400,600 C220,680 80,560 0,620 Z;
+                  M0,400 C140,335 320,460 500,375 C680,295 800,420 900,360 L900,600 C770,660 575,540 395,620 C215,700 70,580 0,640 Z;
+                  M0,380 C120,320 300,440 480,360 C660,280 780,400 900,340 L900,580 C760,640 580,520 400,600 C220,680 80,560 0,620 Z"/>
+      </path>
+      <path fill="#EF3705">
+        <animate attributeName="d" dur="13s" repeatCount="indefinite"
+          values="M0,700 C200,640 380,760 560,680 C740,600 860,720 900,660 L900,900 L0,900 Z;
+                  M0,720 C220,655 400,775 575,690 C755,605 870,730 900,670 L900,900 L0,900 Z;
+                  M0,700 C200,640 380,760 560,680 C740,600 860,720 900,660 L900,900 L0,900 Z"/>
+      </path>
+    </svg>
+  </div>
+
+  <div class="hero__left">
+    <div class="pill">🌺 Bali — Opening Soon</div>
+    <!-- modif 1+2 : titre simplifié, bouton blanc -->
+    <h1 class="hero__title">Say it<br><span class="line--outline">sweetly.</span></h1>
+    <p class="hero__sub">Handmade shortbread biscuits, engraved with messages that make people smile.<br><strong style="color:var(--white)">Bali's first customizable biscuit brand.</strong></p>
+    <div class="hero__ctas">
+      <!-- modif 2+3 : fond blanc, texte pre-order -->
+      <a href="https://wa.me/62XXXXXXXXX?text=Hi!%20I%20want%20to%20know%20more%20about%20Bali%20Biscuits%20🍪" class="btn btn--white">Pre-order on WhatsApp 🍪</a>
+      <a href="#about" class="btn btn--outline-white">Discover ↓</a>
+    </div>
+  </div>
+
+  <div class="hero__right">
+    <div class="logo-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 362.36 261.59" aria-label="Bali Biscuits logo"><g fill="#ffffff"><path d="M124.53,139.23v-43.33c0-.98.7-1.96,1.68-1.96h9.59c1.26,0,.91,2.8.91,3.29l-.42,38.64c0,2.1.14,2.24,2.52,2.17l10.01-.42c.84-.07,1.4.21,1.4,1.12v6.16c0,2.03-.21,2.24-1.33,2.24l-20.93.49c-3.99.07-3.43-5.11-3.43-8.4Z"/><path d="M154.21,108.01c0-.7.7-1.12,1.68-1.12l8.75.07c1.19,0,1.26,1.33,1.26,1.68l-1.4,37.45c0,.63-.56,1.12-1.33,1.12l-7.91-.07c-1.19,0-1.05-.63-1.05-1.75v-37.38ZM154.28,94.71c0-1.33.07-2.17,1.47-2.17l8.54-.07c1.05,0,1.47.98,1.47,2.1l-.07,8.47c0,1.4-1.4,1.68-2.17,1.68l-7.63-.07c-1.05,0-1.61-.7-1.61-1.82v-8.12Z"/><path d="M84.98,168.01c0-.7.7-1.12,1.68-1.12l8.75.07c1.19,0,1.26,1.33,1.26,1.68l-1.4,37.45c0,.63-.56,1.12-1.33,1.12l-7.91-.07c-1.19,0-1.05-.63-1.05-1.75,0,0,0-37.38,0-37.38ZM85.05,154.71c0-1.33.07-2.17,1.47-2.17l8.54-.07c1.05,0,1.47.98,1.47,2.1l-.07,8.47c0,1.4-1.4,1.68-2.17,1.68l-7.63-.07c-1.05,0-1.61-.7-1.61-1.82v-8.12Z"/><path d="M101.36,188.59l6.44-.49c1.12-.07,1.61.56,1.61,2.17,0,3.64,3.57,9.45,7.56,9.45,4.83,0,6.58-2.94,6.58-6.37,0-11.62-23.52-8.61-23.52-24.71,0-8.61,6.3-15.61,17.99-15.61s16.66,6.23,16.66,14.21c0,2.45-.7,3.85-2.1,3.99l-5.04.42c-1.96.14-3.01-1.26-3.01-3.43,0-3.43-.56-6.93-5.88-6.93s-6.02,3.36-6.02,6.86c0,11.06,23.03,7.14,23.03,24.29,0,8.75-5.81,15.19-17.99,15.19-11.48,0-17.99-6.51-17.99-15.68,0-2.38.49-3.29,1.68-3.36h0Z"/><path d="M157.08,153.03c7.91,0,11.83,3.92,14.7,8.96.84,1.4,1.19,2.52,1.19,3.36,0,.91-.42,1.61-1.12,2.24l-2.87,2.52c-.56.49-1.12.77-1.68.77-.98,0-2.03-.91-3.29-2.73-.98-1.4-2.66-4.9-6.3-4.9-5.81,0-9.17,2.1-9.17,16.52s3.43,18.06,10.22,18.06c2.73,0,4.41-1.54,7.14-5.04.63-.84,1.12-1.47,1.96-1.47.28,0,.63.07.98.28l3.57,1.96c.91.49,1.33,1.33,1.33,2.31,0,.84-.35,1.82-.84,2.66-3.08,5.25-8.68,8.61-15.19,8.61-14.84,0-21.28-8.33-21.28-28.56s9.1-25.55,20.65-25.55h0Z"/><path d="M177.71,207.17c-1.01,0-1.89-.91-1.89-1.95l.21-6.35c0-1.29,1.07-2.34,2.36-2.34l27.77-.14h0c.88,0,3.52,0,3.52,2.09l.14,5.89c0,.48.04,1.28-.59,1.92-.54.55-1.36.81-2.6.81l-28.93.07h.01ZM206.16,198.39l-27.77.14c-.2,0-.37.17-.37.36v.03l-.2,6.25,28.81-.07c.96,0,1.16-.2,1.16-.2.04-.06.03-.33.02-.47l-.14-5.87c-.13-.07-.51-.18-1.52-.18h0ZM207.32,194.08h-5.04c-1.17,0-2.02-.85-2.02-2.02v-1.14c-1.84,1.39-5.13,3.16-9.89,3.16-12.47,0-15.09-7.06-15.09-12.98v-24.44c0-2.8,1.28-3.38,2.36-3.38h9.19c1.42,0,2.29,1.23,2.29,2.36v22.12c0,2.05.34,6.83,3.49,6.83,3.98,0,4.53-4.67,4.9-11.8l.84-16.59c.19-2.95,1.76-3.26,2.43-3.26h7.22c.95,0,1.65.25,2.14.76.69.72.73,1.75.7,2.46l-1.29,35.8c0,1.31-.83,2.12-2.23,2.12ZM200.73,188.41c.21,0,.42.05.62.14.55.26.91.84.91,1.47v2.04l5.06.02c.1,0,.17,0,.22-.02v-.14l1.29-35.84c.03-.75-.1-.95-.15-1-.03-.03-.18-.15-.69-.15h-7.22c-.12,0-.37.4-.43,1.38l-.84,16.58c-.33,6.42-.71,13.7-6.89,13.7-3.49,0-5.49-3.22-5.49-8.83v-22.12c0-.07-.08-.36-.29-.36h-9.19c-.24,0-.36.46-.36,1.38v24.44c0,7.39,4.28,10.98,13.09,10.98,4.85,0,7.94-2.06,9.35-3.29.3-.25.66-.38,1.01-.38Z"/><path d="M213.36,168.01c0-.7.7-1.12,1.68-1.12l8.75.07c1.19,0,1.26,1.33,1.26,1.68l-1.4,37.45c0,.63-.56,1.12-1.33,1.12l-7.91-.07c-1.19,0-1.05-.63-1.05-1.75v-37.38h0ZM213.42,154.71c0-1.33.07-2.17,1.47-2.17l8.54-.07c1.05,0,1.47.98,1.47,2.1l-.07,8.47c0,1.4-1.4,1.68-2.17,1.68l-7.63-.07c-1.05,0-1.61-.7-1.61-1.82v-8.12h0Z"/><path d="M236.11,163.04l-7.35-.49c-.35,0-.84-.42-.84-.91l-.21-5.81c0-.49,0-1.89.98-1.89h27.58c1.26,0,1.82.28,1.82,1.47v5.53c0,1.75-.56,1.82-1.82,1.82h-5.88c-.56,0-.7.63-.7,1.19l-.98,42.28c0,.7-.14.91-.91.91h-9.17c-.91,0-1.05-.21-1.12-1.82l-.91-41.37c0-.42-.07-.91-.49-.91h0Z"/><path d="M260.11,188.59l6.44-.49c1.12-.07,1.61.56,1.61,2.17,0,3.64,3.57,9.45,7.56,9.45,4.83,0,6.58-2.94,6.58-6.37,0-11.62-23.52-8.61-23.52-24.71,0-8.61,6.3-15.61,17.99-15.61s16.66,6.23,16.66,14.21c0,2.45-.7,3.85-2.1,3.99l-5.04.42c-1.96.14-3.01-1.26-3.01-3.43,0-3.43-.56-6.93-5.88-6.93s-6.02,3.36-6.02,6.86c0,11.06,23.03,7.14,23.03,24.29,0,8.75-5.81,15.19-17.99,15.19-11.48,0-17.99-6.51-17.99-15.68,0-2.38.49-3.29,1.68-3.36h0Z"/><path d="M48.83,94.63c0-.7.7-1.33,1.54-1.33l18.97-.14c8.26-.07,13.37,5.67,13.37,12.88s-2.24,10.22-7,13.44c-.35.28-.56.56-.56.77,0,.28.21.56.7.77,3.29,1.61,5.46,2.94,5.46,11.2,0,10.99-8.54,14.42-27.09,14.42h-1.75c-1.12,0-1.96-.7-1.96-1.61l-1.68-50.4ZM61.29,106.53l.28,10.57c0,.42.56.7,1.47.7,4.83,0,8.82-3.15,8.82-10.15,0-4.41-2.17-4.41-7.84-4.41h-1.82c-.84,0-.98.49-.91,3.29ZM61.57,137.83c0,1.61.91,1.68,1.26,1.68,5.67,0,8.68-2.52,8.68-8.26s-2.52-5.6-7.49-5.6h-1.54c-.63,0-.91.42-.91,1.33v10.85Z"/><path d="M48.83,154.63c0-.7.7-1.33,1.54-1.33l18.97-.14c8.26-.07,13.37,5.67,13.37,12.88s-2.24,10.22-7,13.44c-.35.28-.56.56-.56.77,0,.28.21.56.7.77,3.29,1.61,5.46,2.94,5.46,11.2,0,10.99-8.54,14.42-27.09,14.42h-1.75c-1.12,0-1.96-.7-1.96-1.61l-1.68-50.4ZM61.29,166.53l.28,10.57c0,.42.56.7,1.47.7,4.83,0,8.82-3.15,8.82-10.15,0-4.41-2.17-4.41-7.84-4.41h-1.82c-.84,0-.98.49-.91,3.29ZM61.57,197.83c0,1.61.91,1.68,1.26,1.68,5.67,0,8.68-2.52,8.68-8.26s-2.52-5.6-7.49-5.6h-1.54c-.63,0-.91.42-.91,1.33v10.85Z"/><path d="M.18,130.72c0,10.22,5.46,19.87,14.14,25.19C5.64,161.36.18,170.88.18,181.1s5.46,19.87,14.14,25.33c-10.64,6.58-15.95,19.17-13.44,31.63,2.38,11.2,10.64,19.73,21.69,22.39,12.88,3.08,25.75-2.1,32.61-13.16,5.46,8.68,14.84,14.14,25.19,14.14s19.87-5.32,25.33-14c5.32,8.68,14.84,14,25.19,14h1.82c9.52-.7,18.33-5.88,23.23-14,0,0,0,.28.14.28,0,0,.14-.28.28-.28,5.18,8.4,14.28,13.72,24.21,14.14h1.54c9.94-.28,19.03-5.6,24.21-14l.14.28.14-.28c5.18,8.4,14.28,13.72,24.21,14h.98c10.36,0,19.87-5.32,25.19-14,5.46,8.68,14.97,14,25.33,14s19.87-5.32,25.19-14c6.72,10.92,19.59,16.23,32.33,13.16,11.06-2.52,19.45-11.2,21.83-22.25,2.66-12.46-2.66-25.19-13.44-31.77,8.68-5.46,14.14-14.97,14.14-25.33s-5.46-19.87-14.14-25.19c8.68-5.32,14.14-14.97,14.14-25.19s-5.46-19.87-14.14-25.33c8.68-5.32,14.14-14.97,14.14-25.19s-5.46-19.87-14.14-25.33c10.64-6.58,15.95-19.17,13.44-31.49-2.24-11.2-10.64-19.87-21.69-22.53-12.88-3.08-25.75,2.24-32.61,13.16-5.46-8.68-14.84-14.14-25.19-14.14s-19.87,5.32-25.33,14.14C251.53,5.6,242.02.14,231.66.14h-1.12c-9.94.42-18.89,5.6-24.07,14l-.14-.28-.14.28c-5.32-8.54-14.28-13.72-24.21-14h-1.54c-9.94.28-19.03,5.6-24.21,14l-.14-.28-.14.28c-5.18-8.54-14.28-13.72-24.21-14h-1.54c-10.08.14-19.45,5.46-24.77,14-5.46-8.68-14.97-14.14-25.33-14.14s-19.87,5.32-25.19,14.14C49.44,5.18,39.92,0,29.71,0s-5.04.28-7.56.98C11.09,3.78,2.84,12.32.6,23.65c-2.52,12.46,3.08,25.19,13.72,31.21C5.5,60.18.04,69.84.04,80.19s5.46,19.87,14.14,25.19C5.5,110.84.04,120.36.04,130.72h.14ZM19.49,112.66c2.52-1.54,4.06-4.2,4.06-7.28s-1.54-5.74-4.06-7.14c-6.44-3.78-10.5-10.64-10.5-18.05s4.06-14.28,10.5-18.05c2.52-1.54,4.06-4.2,4.06-7.14s-1.54-5.88-4.2-7.28c-7.84-4.62-11.76-13.3-9.94-22.39,1.54-7.84,7.28-13.86,14.97-15.67,9.52-2.38,19.03,1.68,23.65,10.08,1.4,2.52,4.06,4.06,7,4.06s5.6-1.54,6.86-4.06c3.64-6.72,10.64-10.92,18.33-10.92s14.69,4.2,18.33,10.92c1.4,2.52,4.06,4.06,7,4.06s5.6-1.54,7-4.06c.7-1.26,1.54-2.52,2.52-3.64,3.92-4.48,9.66-7.28,15.81-7.28s.98,0,1.4,0h0c7.14.28,13.72,4.34,17.21,10.78,1.4,2.52,3.92,4.06,6.86,4.06s5.46-1.54,6.72-4.06c3.64-6.72,10.64-10.92,18.33-10.92h.42c7.56,0,14.69,4.2,18.33,10.92,1.4,2.52,3.92,4.06,6.72,4.06s5.46-1.68,6.86-4.2c3.5-6.44,10.08-10.36,17.21-10.78h1.4c7.56,0,14.55,4.2,18.33,10.92v.14c1.4,2.38,4.06,3.92,6.86,3.92s5.6-1.54,7-4.06c3.64-6.72,10.64-10.92,18.33-10.92s14.55,4.2,18.33,10.92c1.26,2.52,4.06,4.06,6.86,4.06s5.6-1.54,7-4.2c4.62-8.26,14-12.46,23.51-10.08,7.7,1.82,13.58,7.84,15.11,15.67,1.82,9.1-1.96,17.91-9.94,22.53-2.66,1.54-4.2,4.34-4.2,7.28s1.54,5.6,4.06,7.14c6.44,3.78,10.5,10.64,10.5,18.05s-4.06,14.28-10.5,18.05c-2.66,1.54-4.06,4.2-4.06,7.14s1.54,5.74,4.06,7.28c6.44,3.64,10.5,10.64,10.5,18.05s-4.06,14.28-10.5,18.05c-2.66,1.54-4.06,4.2-4.06,7.28s1.54,5.74,4.06,7.14c6.44,3.78,10.5,10.64,10.5,18.05s-4.06,14.42-10.5,18.05c-2.52,1.4-4.06,4.2-4.06,7.14s1.54,5.88,4.2,7.28h0c7.84,4.62,11.76,13.72,9.8,22.67-1.68,7.84-7.56,13.86-15.25,15.67-9.38,2.1-18.75-1.96-23.37-10.22-1.4-2.52-4.06-4.2-7-4.2s-5.6,1.54-6.86,4.06c-3.64,6.72-10.64,10.92-18.33,10.92s-14.69-4.2-18.33-10.92c-1.4-2.52-4.06-4.06-7-4.06s-4.9,1.12-6.44,3.22c-.14.28-.42.56-.56.84-3.64,6.72-10.64,10.92-18.33,10.92h-.84c-7.42-.14-14.14-4.06-17.77-10.78-1.4-2.52-4.06-4.06-6.86-4.06s-5.46,1.68-6.72,4.06c-3.64,6.72-10.64,10.92-18.33,10.92h-.42c-7.56,0-14.69-4.2-18.33-10.92-1.4-2.52-4.06-4.06-7-4.06s-.42,0-.7,0c-2.52.42-4.62,1.82-5.88,4.06-3.64,6.72-10.5,10.64-17.91,10.78h-.84c-7,0-13.44-3.5-17.35-9.24-.42-.56-.7-1.12-.98-1.68-1.4-2.52-4.06-4.06-7-4.06s-5.6,1.54-7,4.06c-3.64,6.72-10.64,10.92-18.33,10.92s-14.69-4.2-18.33-10.92c-1.26-2.52-4.06-4.06-6.86-4.06-2.94,0-5.6,1.54-7,4.2-4.62,8.4-14.14,12.46-23.51,10.22-7.7-1.82-13.44-7.84-15.11-15.67-1.96-9.1,1.96-17.91,9.94-22.53,2.66-1.54,4.2-4.34,4.2-7.28s-1.54-5.6-4.06-7.14c-6.44-3.64-10.5-10.64-10.5-18.05s4.06-14.28,10.5-18.05c2.52-1.54,4.06-4.2,4.06-7.14s-1.54-5.74-4.06-7.28c-6.44-3.78-10.5-10.64-10.5-18.05s4.06-14.42,10.5-18.05h.42Z"/><path d="M81.96,145.99l7.98-40.25c1.89-9.45,2.52-11.55,5.81-11.55h12.81c2.8,0,3.43.91,3.85,3.29l8.89,48.02c.14.77-.91,1.4-1.54,1.4h-7.49c-.42,0-.77-.35-.91-.91l-2.17-10.78c-.28-1.33-.49-1.82-1.96-1.82l-7.84-.07c-2.87,0-3.43.77-3.92,2.87l-2.31,9.31c-.21.98-.91,1.89-1.4,1.89h-9.03c-.7,0-.98-.21-.77-1.4h0ZM102.47,103.49c-.21,0-.35.42-.56,1.4l-3.64,17.92c-.14.77.21,1.26.49,1.26l7.77.14c.21,0,.49-.42.35-1.12l-3.99-18.69c-.14-.56-.28-.91-.42-.91Z"/></g></svg>
+    </div>
+  </div>
+</section>
+
+<!-- BAND — modif 5 : 💛 + nouveaux textes -->
+<div class="band" aria-hidden="true">
+  <div class="band__track">
+    <span class="band__item"><span class="star">💛</span>Handmade with love</span>
+    <span class="band__item"><span class="star">💛</span>Freshly baked</span>
+    <span class="band__item"><span class="star">💛</span>Instant smiles</span>
+    <span class="band__item"><span class="star">💛</span>Joy guaranteed</span>
+    <span class="band__item"><span class="star">💛</span>Handmade with love</span>
+    <span class="band__item"><span class="star">💛</span>Freshly baked</span>
+    <span class="band__item"><span class="star">💛</span>Instant smiles</span>
+    <span class="band__item"><span class="star">💛</span>Joy guaranteed</span>
+    <span class="band__item"><span class="star">💛</span>Handmade with love</span>
+    <span class="band__item"><span class="star">💛</span>Freshly baked</span>
+    <span class="band__item"><span class="star">💛</span>Instant smiles</span>
+    <span class="band__item"><span class="star">💛</span>Joy guaranteed</span>
+  </div>
+</div>
+
+<!-- ABOUT — modifs 6+7+8+9 : textes mis à jour -->
+<section class="section section--grey" id="about">
+  <div class="about__grid reveal">
+    <div>
+      <p class="section__label">What is Bali Biscuits?</p>
+      <h2 class="section__title">Biscuits<br>with a<br><span style="color:var(--red)">message.</span></h2>
+    </div>
+    <div>
+      <p class="about__body">Bali Biscuits are <strong>handmade shortbread cookies engraved with your words</strong> — funny, heartfelt, or totally cheeky.<br><br>Perfect for hotels, weddings, birthdays, corporate gifts, or just to surprise your loved-ones in the sweetest way.<br><br>Born from the mind of a French expat to embody freedom, kindness, and the courage to be unapologetically yourself.<br><br>Laughter, authenticity, and empathy can make the world a little softer — starting with a biscuit.</p>
+    </div>
+  </div>
+  <div class="cards reveal">
+    <div class="card"><div class="card__emoji">✋</div><div class="card__title">100% Handmade</div><div class="card__body">Every biscuit crafted by hand in our Bali kitchen. No factory. No fuss.</div></div>
+    <div class="card card--yellow"><div class="card__emoji">✍️</div><div class="card__title">Your Message</div><div class="card__body">We engrave any message you choose. Funny, tender, bold — you decide the tone.</div></div>
+    <div class="card"><div class="card__emoji">⚡</div><div class="card__title">Fast &amp; Affordable</div><div class="card__body">Baked to order. Ready fast. Priced fairly. Minimum order 6 pieces — no maximum limit!</div></div>
+    <div class="card card--red"><div class="card__emoji">🏨</div><div class="card__title">Hotels &amp; Events</div><div class="card__body">Welcome gifts, event favors, or branded treats for your hospitality business.</div></div>
+    <div class="card"><div class="card__emoji">🌴</div><div class="card__title">Made in Bali</div><div class="card__body">Local ingredients, local love. The Island of Smiles, now in biscuit form.</div></div>
+    <div class="card card--yellow"><div class="card__emoji">🎁</div><div class="card__title">Perfect Gift</div><div class="card__body">Weddings, birthdays, corporate, or just Tuesday. Always the right thing to give.</div></div>
+  </div>
+</section>
+
+<!-- MESSAGES — modif 10+11 : nouveaux messages + nouvelle légende -->
+<section class="section section--red messages">
+  <p class="section__label reveal">Message ideas</p>
+  <h2 class="section__title reveal">What will<br>yours say?</h2>
+  <div class="messages__grid reveal">
+    <div class="msg">Pinch me I'm in Bali 🌴</div>
+    <div class="msg">You are my bintang 🍺</div>
+    <div class="msg">Brainfucked &amp; sunkissed</div>
+    <div class="msg">Better late than ugly</div>
+    <div class="msg">Mid 30's crisis</div>
+    <div class="msg">Sea, us &amp; sun</div>
+    <div class="msg">Sorry not sorry 😇</div>
+    <div class="msg">Checked in &amp; chilled out</div>
+    <div class="msg">Just married ✨</div>
+    <div class="msg">Just nailed that padel match 🎾</div>
+    <div class="msg">Crying feels better in Bali</div>
+    <div class="msg">One-life stand ?</div>
+  </div>
+  <p style="margin-top:1.5rem;font-size:.82rem;opacity:.5;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.6;" class="reveal">Our favorite samples to give you inspiration. Dare to be creative and find your own words.</p>
+</section>
+
+<!-- NOTIFY — modif 12 : texte mis à jour -->
+<section class="section section--grey notify">
+  <p class="section__label reveal">Be the first to know</p>
+  <h2 class="notify__title reveal">Something<br><span class="outline">sweet</span><br>is coming.</h2>
+  <p class="notify__sub reveal">Bali Biscuits opens very soon. Leave us your e-mail (yeah, boomer) to get notified, enquire a pre-order on WhatsApp, or ask about hotel &amp; event partnerships.</p>
+  <div class="reveal">
+    <a href="https://wa.me/62XXXXXXXXX?text=Hi!%20I%20want%20to%20know%20more%20about%20Bali%20Biscuits%20🍪" class="wa-btn">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.107.547 4.09 1.505 5.82L.057 23.4a.75.75 0 00.93.93l5.62-1.46A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.921 0-3.733-.488-5.31-1.345l-.38-.215-3.94 1.023 1.044-3.818-.236-.392A9.951 9.951 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      Message us on WhatsApp
+    </a>
+    <p class="notify__note">We reply fast. Promise. 🍪</p>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="section section--pink" style="text-align:center;padding:4rem 6vw;">
+  <p class="section__label reveal">Follow the journey</p>
+  <h2 class="section__title reveal" style="margin-bottom:.8rem;">Behind the<br>scenes 📸</h2>
+  <p style="opacity:.85;margin-bottom:1.8rem;max-width:420px;margin-left:auto;margin-right:auto;" class="reveal">First batches, message inspo &amp; Bali vibes. Follow us on Instagram.</p>
+  <div class="reveal">
+    <a href="https://instagram.com/balibiscuits" target="_blank" rel="noopener" class="btn btn--white">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      @balibiscuits
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER — modif 13 : filigrane WRITE YOUR OWN MESSAGE dans le biscuit -->
+<footer>
+  <div class="footer__top">
+    <div class="footer__logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 362.36 261.59">
+        <g fill="#ffffff" opacity=".5"><path d="M124.53,139.23v-43.33c0-.98.7-1.96,1.68-1.96h9.59c1.26,0,.91,2.8.91,3.29l-.42,38.64c0,2.1.14,2.24,2.52,2.17l10.01-.42c.84-.07,1.4.21,1.4,1.12v6.16c0,2.03-.21,2.24-1.33,2.24l-20.93.49c-3.99.07-3.43-5.11-3.43-8.4Z"/><path d="M154.21,108.01c0-.7.7-1.12,1.68-1.12l8.75.07c1.19,0,1.26,1.33,1.26,1.68l-1.4,37.45c0,.63-.56,1.12-1.33,1.12l-7.91-.07c-1.19,0-1.05-.63-1.05-1.75v-37.38ZM154.28,94.71c0-1.33.07-2.17,1.47-2.17l8.54-.07c1.05,0,1.47.98,1.47,2.1l-.07,8.47c0,1.4-1.4,1.68-2.17,1.68l-7.63-.07c-1.05,0-1.61-.7-1.61-1.82v-8.12Z"/><path d="M.18,130.72c0,10.22,5.46,19.87,14.14,25.19C5.64,161.36.18,170.88.18,181.1s5.46,19.87,14.14,25.33c-10.64,6.58-15.95,19.17-13.44,31.63,2.38,11.2,10.64,19.73,21.69,22.39,12.88,3.08,25.75-2.1,32.61-13.16,5.46,8.68,14.84,14.14,25.19,14.14s19.87-5.32,25.33-14c5.32,8.68,14.84,14,25.19,14h1.82c9.52-.7,18.33-5.88,23.23-14,0,0,0,.28.14.28,0,0,.14-.28.28-.28,5.18,8.4,14.28,13.72,24.21,14.14h1.54c9.94-.28,19.03-5.6,24.21-14l.14.28.14-.28c5.18,8.4,14.28,13.72,24.21,14h.98c10.36,0,19.87-5.32,25.19-14,5.46,8.68,14.97,14,25.33,14s19.87-5.32,25.19-14c6.72,10.92,19.59,16.23,32.33,13.16,11.06-2.52,19.45-11.2,21.83-22.25,2.66-12.46-2.66-25.19-13.44-31.77,8.68-5.46,14.14-14.97,14.14-25.33s-5.46-19.87-14.14-25.19c8.68-5.32,14.14-14.97,14.14-25.19s-5.46-19.87-14.14-25.33c8.68-5.32,14.14-14.97,14.14-25.19s-5.46-19.87-14.14-25.33c10.64-6.58,15.95-19.17,13.44-31.49-2.24-11.2-10.64-19.87-21.69-22.53-12.88-3.08-25.75,2.24-32.61,13.16-5.46-8.68-14.84-14.14-25.19-14.14s-19.87,5.32-25.33,14.14C251.53,5.6,242.02.14,231.66.14h-1.12c-9.94.42-18.89,5.6-24.07,14l-.14-.28-.14.28c-5.32-8.54-14.28-13.72-24.21-14h-1.54c-9.94.28-19.03,5.6-24.21,14l-.14-.28-.14.28c-5.18-8.54-14.28-13.72-24.21-14h-1.54c-10.08.14-19.45,5.46-24.77,14-5.46-8.68-14.97-14.14-25.33-14.14s-19.87,5.32-25.19,14.14C49.44,5.18,39.92,0,29.71,0s-5.04.28-7.56.98C11.09,3.78,2.84,12.32.6,23.65c-2.52,12.46,3.08,25.19,13.72,31.21C5.5,60.18.04,69.84.04,80.19s5.46,19.87,14.14,25.19C5.5,110.84.04,120.36.04,130.72h.14Z"/></g>
+        <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle"
+          font-family="Poppins,sans-serif" font-size="13" font-weight="700"
+          letter-spacing="2.5" fill="#ffffff" opacity="0.2">WRITE YOUR OWN MESSAGE</text>
+      </svg>
+    </div>
+    <div class="footer__links">
+      <a href="https://wa.me/62XXXXXXXXX">WhatsApp</a>
+      <a href="https://instagram.com/balibiscuits">Instagram</a>
+      <a href="mailto:hello@balibiscuits.id">hello@balibiscuits.id</a>
+    </div>
+  </div>
+  <p class="footer__copy">© 2025 Bali Biscuits. Made with 🍪 in Bali, Indonesia.</p>
+</footer>
+
+<script>
+const cur=document.getElementById('cursor');
+document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';});
+document.querySelectorAll('a,button,.msg,.card,.btn').forEach(el=>{
+  el.addEventListener('mouseenter',()=>cur.classList.add('big'));
+  el.addEventListener('mouseleave',()=>cur.classList.remove('big'));
+});
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
